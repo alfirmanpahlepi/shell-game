@@ -1,0 +1,15 @@
+.mid {
+  /* animation: left-mid 0.3s;
+  animation-fill-mode: forwards; */
+  left: 5rem;
+  transition: 0.3s;
+}
+
+.right {
+  left: 10rem;
+  transition: 0.3s;
+}
+.left {
+  left: 0;
+  transition: 0.3s;
+}
