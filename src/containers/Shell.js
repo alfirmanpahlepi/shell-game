@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "../components/Button";
 import { Cup } from "../components/Cup";
 import "./Shell.css";
 
@@ -6,17 +7,19 @@ const Shell = () => {
   const [box1, setBox1] = useState("");
   const [box2, setBox2] = useState("");
   const [box3, setBox3] = useState("");
+  const [level, setLevel] = useState("easy");
+  const [isShuffle, setShuffle] = useState(false);
   const [isPlay, setPlay] = useState(false);
 
   const jackpot = !isPlay
     ? "m-auto bg-yellow-400 h-3 w-3 rounded-full ring ring-red-100"
-    : "";
+    : ":)";
 
   const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
-  async function load() {
-    for (var i = 0; i <= 30; i++) {
-      await timer(300);
+  async function animate() {
+    for (var i = 0; i <= 10; i++) {
+      await timer(800);
       let random = Math.random();
 
       //sorry badcode, i'll refactoring soon -_-
@@ -53,35 +56,51 @@ const Shell = () => {
         }
       }
     }
+    setShuffle(false);
   }
 
-  function shuffle() {
+  function handleClick() {
+    setShuffle(true);
     setPlay(true);
-    load();
+    animate();
   }
 
   return (
     <div className="app h-screen w-screen flex bg-gray-600 text-white">
-      <div className="container p-10 space-y-20 bg-gray-700  m-auto text-center flex flex-wrap">
+      <div className="container p-10 max-w-full w-3/4 bg-gray-700  m-auto text-center flex flex-wrap">
         <div className="title w-full font-bold text-5xl">Shell Game</div>
-        <div className="content w-52 m-auto bg-green-300 relative">
+        <div className="my-20 mb-28 content w-52 m-auto bg-green-300 relative">
           <Cup
+            isShuffle={isShuffle}
+            isPlay={isPlay}
+            level={level}
             box={box1}
             position={"left-0"}
-            jackpot={jackpot}
             setPlay={setPlay}
           />
-          <Cup box={box2} position={"left-20"} setPlay={setPlay} />
-          <Cup box={box3} position={"left-40"} setPlay={setPlay} />
+          <Cup
+            isShuffle={isShuffle}
+            isPlay={isPlay}
+            level={level}
+            jackpot={jackpot}
+            box={box2}
+            position={"left-20"}
+            setPlay={setPlay}
+          />
+          <Cup
+            isShuffle={isShuffle}
+            isPlay={isPlay}
+            level={level}
+            box={box3}
+            position={"left-40"}
+            setPlay={setPlay}
+          />
         </div>
-        <div className="button w-full">
-          <button
-            onClick={shuffle}
-            className="focus:outline-none tracking-widest py-1 px-4 font-bold rounded-2xl shadow-md bg-gray-50 hover:bg-gray-200 text-gray-600 hover:text-gray-700"
-          >
-            shuffle
-          </button>
-        </div>
+        <Button
+          isPlay={isPlay}
+          isShuffle={isShuffle}
+          handleClick={handleClick}
+        />
       </div>
     </div>
   );
