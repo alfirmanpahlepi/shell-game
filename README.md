@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Shell Game
+##by ezza022
+### `https://ezza022.github.io/Shell-Game/`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
