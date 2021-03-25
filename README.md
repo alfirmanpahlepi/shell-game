@@ -12,3 +12,4 @@ This game is Not for actual usage only learning purposes.
 - Github Pages
 
 processing...
+i still updating this game for some features
