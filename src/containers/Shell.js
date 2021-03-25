@@ -12,10 +12,12 @@ const Shell = () => {
   const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
   async function load() {
-    // We need to wrap the loop into an async function for this to work
     for (var i = 0; i <= 30; i++) {
-      await timer(300); // then the created Promise can be awaited
+      await timer(300);
       let random = Math.random();
+
+        //sorry badcode, i'll refactoring soon -_-
+
       if (random < 0.3) {
         if (box1 !== "left" && box2 !== "mid" && box3 !== "right") {
           setBox1("left");
