@@ -4,7 +4,7 @@
 
 This game is Not for actual usage only learning purposes.
 
-[https://ezza022.github.io/Shell-Game/](https://ezza022.github.io/Shell-Game/)
+get started : https://ezza022.github.io/Shell-Game/](https://ezza022.github.io/Shell-Game/)
 
 ## Technologies used
 - Reactjs
