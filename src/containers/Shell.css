@@ -1,12 +1,9 @@
-.mid {
-  /* animation: left-mid 0.3s;
-  animation-fill-mode: forwards; */
-  left: 5rem;
-}
-
-.right {
-  left: 10rem;
-}
 .left {
   left: 0;
+}
+.mid {
+  left: 5rem;
+}
+.right {
+  left: 10rem;
 }

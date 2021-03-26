@@ -7,6 +7,7 @@ const Shell = () => {
   const easy = "duration-700";
   const medium = "duration-500";
   const hard = "duration-300";
+  const expert = "duration-200";
 
   const [box1, setBox1] = useState("");
   const [box2, setBox2] = useState("");

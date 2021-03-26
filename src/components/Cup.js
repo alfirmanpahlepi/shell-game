@@ -13,7 +13,7 @@ export const Cup = ({
     if (isPlay) {
       if (!isShuffle) {
         setPlay(false);
-        alert(jackpot ? "Anda benar !" : "Anda salah !");
+        alert(jackpot ? "You win !" : "You lose ! !");
       }
     }
   }
