@@ -67,40 +67,45 @@ const Shell = () => {
 
   return (
     <div className="app h-screen w-screen flex bg-gray-600 text-white">
-      <div className="container p-10 max-w-full w-3/4 bg-gray-700  m-auto text-center flex flex-wrap">
-        <div className="title w-full font-bold text-5xl">Shell Game</div>
-        <div className="my-20 mb-28 content w-52 m-auto bg-green-300 relative">
-          <Cup
-            isShuffle={isShuffle}
+      <div className="container p-10 h-full max-w-full w-3/4 bg-gray-700  flex justify-center items-center">
+        <div className="space-y-36">
+          <div className="title w-full space-y-2 ">
+            <h1 className="font-bold text-5xl text-center">Shell Game</h1>
+            <h2 className="ml-1">By ezza022</h2>
+          </div>
+          <div className=" content w-52 m-auto relative">
+            <Cup
+              isShuffle={isShuffle}
+              isPlay={isPlay}
+              level={level}
+              box={box1}
+              position={"left-0"}
+              setPlay={setPlay}
+            />
+            <Cup
+              isShuffle={isShuffle}
+              isPlay={isPlay}
+              level={level}
+              jackpot={jackpot}
+              box={box2}
+              position={"left-20"}
+              setPlay={setPlay}
+            />
+            <Cup
+              isShuffle={isShuffle}
+              isPlay={isPlay}
+              level={level}
+              box={box3}
+              position={"left-40"}
+              setPlay={setPlay}
+            />
+          </div>
+          <Button
             isPlay={isPlay}
-            level={level}
-            box={box1}
-            position={"left-0"}
-            setPlay={setPlay}
-          />
-          <Cup
             isShuffle={isShuffle}
-            isPlay={isPlay}
-            level={level}
-            jackpot={jackpot}
-            box={box2}
-            position={"left-20"}
-            setPlay={setPlay}
-          />
-          <Cup
-            isShuffle={isShuffle}
-            isPlay={isPlay}
-            level={level}
-            box={box3}
-            position={"left-40"}
-            setPlay={setPlay}
+            handleClick={handleClick}
           />
         </div>
-        <Button
-          isPlay={isPlay}
-          isShuffle={isShuffle}
-          handleClick={handleClick}
-        />
       </div>
     </div>
   );

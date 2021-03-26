@@ -13,7 +13,7 @@ export const Button = ({ isPlay, isShuffle, handleClick }) => {
   }
 
   return (
-    <div className="button w-full">
+    <div className="button w-full text-center">
       <button
         onClick={!isPlay ? handleClick : null}
         className={` ${
