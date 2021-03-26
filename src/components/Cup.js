@@ -6,14 +6,45 @@ export const Cup = ({
   jackpot,
   isShuffle,
   isPlay,
-  setPlay,
   level,
+  easy,
+  medium,
+  hard,
+  score,
+  highscore,
+  setPlay,
+  setScore,
+  setHighscore,
 }) => {
   function result() {
     if (isPlay) {
       if (!isShuffle) {
         setPlay(false);
-        alert(jackpot ? "You win !" : "You lose ! !");
+        if (jackpot) {
+          alert("You win !");
+          switch (level) {
+            case easy:
+              setScore(score + 10);
+              break;
+            case medium:
+              setScore(score + 20);
+              break;
+            case hard:
+              setScore(score + 50);
+              break;
+            default:
+              break;
+          }
+        } else {
+          alert("You lose !");
+          if (score > highscore) {
+            setHighscore(score);
+            setScore(0);
+          } else {
+            setHighscore(highscore);
+            setScore(0);
+          }
+        }
       }
     }
   }
