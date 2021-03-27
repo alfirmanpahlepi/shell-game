@@ -14,7 +14,6 @@ const Shell = () => {
   const [box3, setBox3] = useState("");
   const [level, setLevel] = useState(easy);
   const [score, setScore] = useState(0);
-  const [highscore, setHighscore] = useState(0);
   const [isShuffle, setShuffle] = useState(false);
   const [isPlay, setPlay] = useState(false);
 
@@ -71,7 +70,6 @@ const Shell = () => {
     if (isPlay) {
       if (!isShuffle) {
         setPlay(false);
-        alert("You win !");
         switch (level) {
           case easy:
             setScore(score + 10);
@@ -94,13 +92,7 @@ const Shell = () => {
       if (!isShuffle) {
         setPlay(false);
         alert("You lose !");
-        if (score > highscore) {
-          setHighscore(score);
-          setScore(0);
-        } else {
-          setHighscore(highscore);
-          setScore(0);
-        }
+        setScore(0);
       }
     }
   }
@@ -113,11 +105,11 @@ const Shell = () => {
 
   return (
     <div className="app h-screen w-screen flex bg-green-400 text-white">
-      <div className="mx-auto px-5 md:px-12 h-full w-11/12 md:w-3/4 bg-green-500  flex flex-wrap justify-center content-between py-10">
-      <Navigation/>
+      <div className="relative mx-auto px-5 md:px-12 h-full w-11/12 md:w-3/4 bg-green-500  flex flex-wrap justify-center content-between py-10">
+        <Navigation />
         <div className="title w-full flex justify-center items-center ">
           <div className="space-y-2">
-            <h1 className="font-bold text-5xl text-center w-full">
+            <h1 className="font-bold text-5xl lg:text-7xl text-center w-full">
               Shell Game
             </h1>
             <a
@@ -136,9 +128,9 @@ const Shell = () => {
                 i cant build this Radio Button to dynamic component
                 if i build to component, and adding some array to props
                 the radio button will updating with twice click, whyyy ?*/}
-            <div className="space-x-1">
+            <div className="space-x-2">
               <input
-                className="text-green-700 focus:ring-0"
+                className="text-green-700 lg:h-6 lg:w-6 focus:ring-0"
                 type="radio"
                 id="easy"
                 name="level"
@@ -147,11 +139,13 @@ const Shell = () => {
                 disabled={isPlay ? true : false}
                 onChange={() => (!isPlay ? setLevel(easy) : null)}
               />
-              <label htmlFor="easy">Easy</label>
+              <label className="lg:text-xl" htmlFor="easy">
+                Easy
+              </label>
             </div>
-            <div className="space-x-1">
+            <div className="space-x-2">
               <input
-                className="text-yellow-600 focus:ring-0"
+                className="text-yellow-600 lg:h-6 lg:w-6 focus:ring-0"
                 type="radio"
                 id="medium"
                 name="level"
@@ -159,11 +153,13 @@ const Shell = () => {
                 disabled={isPlay ? true : false}
                 onChange={() => (!isPlay ? setLevel(medium) : null)}
               />
-              <label htmlFor="medium">Medium</label>
+              <label className="lg:text-xl" htmlFor="medium">
+                Medium
+              </label>
             </div>
-            <div className="space-x-1">
+            <div className="space-x-2">
               <input
-                className="text-red-600 focus:ring-0"
+                className="text-red-600 lg:h-6 lg:w-6 focus:ring-0"
                 type="radio"
                 id="hard"
                 name="level"
@@ -171,7 +167,9 @@ const Shell = () => {
                 disabled={isPlay ? true : false}
                 onChange={() => (!isPlay ? setLevel(hard) : null)}
               />
-              <label htmlFor="hard">Hard</label>
+              <label className="lg:text-xl" htmlFor="hard">
+                Hard
+              </label>
             </div>
           </div>
           <div className="w-52 m-auto relative">
@@ -194,16 +192,12 @@ const Shell = () => {
             handleClick={handleClick}
           />
         </div>
-        <div className="w-full mb-10 flex justify-between items-center">
-          <h2 className="text-xl md:text-5xl">
+        <div className="w-full mb-10 ">
+          <h2 className="text-3xl text-center md:text-5xl">
             Score : <span className="font-bold">{score}</span>
-          </h2>
-          <h2 className="text-xl md:text-5xl">
-            Highscore : <span className="font-bold">{highscore}</span>
           </h2>
         </div>
       </div>
-      
     </div>
   );
 };
