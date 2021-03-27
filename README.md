@@ -2,7 +2,7 @@
 
 `by ezza022`
 
-This game is Not for actual usage only learning purposes.
+Find the yellow ball !
 
 get started : [https://ezza022.github.io/Shell-Game/](https://ezza022.github.io/Shell-Game/)
 
