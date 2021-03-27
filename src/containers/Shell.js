@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "../components/Button";
 import { Cup } from "../components/Cup";
+import { Navigation } from "../components/Navigation";
 import "./Shell.css";
 
 const Shell = () => {
@@ -17,9 +18,7 @@ const Shell = () => {
   const [isShuffle, setShuffle] = useState(false);
   const [isPlay, setPlay] = useState(false);
 
-  const jackpot = !isPlay
-    ? "m-auto bg-yellow-400 h-3 w-3 rounded-full ring ring-red-100"
-    : ":)";
+  const jackpot = !isPlay ? "m-auto bg-yellow-400 h-4 w-4 rounded-full" : ":)";
 
   const timer = (ms) => new Promise((res) => setTimeout(res, ms));
   async function animate() {
@@ -37,7 +36,7 @@ const Shell = () => {
         break;
       case hard:
         delay = 300;
-        count = 35;
+        count = 25;
         break;
       default:
         break;
@@ -113,8 +112,9 @@ const Shell = () => {
   ];
 
   return (
-    <div className="app h-screen w-screen flex bg-gray-600 text-white">
-      <div className="container px-5 md:px-12 h-full w-11/12 md:w-3/4 bg-gray-700  flex flex-wrap justify-center content-between py-10">
+    <div className="app h-screen w-screen flex bg-green-400 text-white">
+      <div className="mx-auto px-5 md:px-12 h-full w-11/12 md:w-3/4 bg-green-500  flex flex-wrap justify-center content-between py-10">
+      <Navigation/>
         <div className="title w-full flex justify-center items-center ">
           <div className="space-y-2">
             <h1 className="font-bold text-5xl text-center w-full">
@@ -132,12 +132,13 @@ const Shell = () => {
         </div>
         <div className="space-y-36">
           <div className="flex justify-center items-center space-x-5">
-            { /* help me pls :'( 
-                i cant build this Radio Button with dynamic component
-                if i build with component, and adding some array to props
+            {/* help me pls :'( 
+                i cant build this Radio Button to dynamic component
+                if i build to component, and adding some array to props
                 the radio button will updating with twice click, whyyy ?*/}
             <div className="space-x-1">
               <input
+                className="text-green-700 focus:ring-0"
                 type="radio"
                 id="easy"
                 name="level"
@@ -150,6 +151,7 @@ const Shell = () => {
             </div>
             <div className="space-x-1">
               <input
+                className="text-yellow-600 focus:ring-0"
                 type="radio"
                 id="medium"
                 name="level"
@@ -161,6 +163,7 @@ const Shell = () => {
             </div>
             <div className="space-x-1">
               <input
+                className="text-red-600 focus:ring-0"
                 type="radio"
                 id="hard"
                 name="level"
@@ -191,7 +194,7 @@ const Shell = () => {
             handleClick={handleClick}
           />
         </div>
-        <div className="w-full flex justify-between items-center">
+        <div className="w-full mb-10 flex justify-between items-center">
           <h2 className="text-xl md:text-5xl">
             Score : <span className="font-bold">{score}</span>
           </h2>
@@ -200,6 +203,7 @@ const Shell = () => {
           </h2>
         </div>
       </div>
+      
     </div>
   );
 };

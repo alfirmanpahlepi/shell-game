@@ -18,7 +18,7 @@ export const Button = ({ isPlay, isShuffle, handleClick }) => {
         onClick={!isPlay ? handleClick : null}
         className={` ${
           !isPlay ? null : "cursor-not-allowed"
-        } focus:outline-none tracking-widest py-1 px-4 font-bold rounded-2xl shadow-md bg-gray-50 hover:bg-gray-200 text-gray-600 hover:text-gray-700`}
+        }  focus:outline-none tracking-widest py-1 px-4 font-bold rounded-2xl shadow-lg bg-gray-50 hover:bg-gray-200 text-gray-600 hover:text-gray-700`}
       >
         {name}
       </button>
