@@ -7,15 +7,17 @@ export const Cup = ({
   isShuffle,
   isPlay,
   level,
-  easy,
-  medium,
-  hard,
   score,
   highscore,
   setPlay,
   setScore,
   setHighscore,
 }) => {
+
+  const easy = "duration-700";
+  const medium = "duration-500";
+  const hard = "duration-300";
+
   function result() {
     if (isPlay) {
       if (!isShuffle) {

@@ -16,15 +16,14 @@ const Shell = () => {
   const [highscore, setHighscore] = useState(0);
   const [isShuffle, setShuffle] = useState(false);
   const [isPlay, setPlay] = useState(false);
-  const [isGame, setGame] = useState(false);
 
   const jackpot = !isPlay
     ? "m-auto bg-yellow-400 h-3 w-3 rounded-full ring ring-red-100"
     : ":)";
 
   const timer = (ms) => new Promise((res) => setTimeout(res, ms));
-
   async function animate() {
+    let random = 0;
     for (var i = 0; i <= 15; i++) {
       let delay = 0;
       switch (level) {
@@ -41,7 +40,7 @@ const Shell = () => {
           break;
       }
       await timer(delay);
-      let random = Math.random();
+      random = Math.random();
 
       //sorry badcode, i'll refactoring soon -_-
 
@@ -81,15 +80,23 @@ const Shell = () => {
   }
 
   function handleClick() {
-    setGame(true);
     setPlay(true);
     setShuffle(true);
     animate();
   }
 
+  function handleResult() {}
+
+  const cups = [
+    { box: box1, position: "left-0", jackpot: null },
+    { box: box2, position: "left-20", jackpot: jackpot },
+    { box: box3, position: "left-40", jackpot: null },
+  ];
+  
+
   return (
     <div className="app h-screen w-screen flex bg-gray-600 text-white">
-      <div className="container px-12 h-full w-11/12 md:w-3/4 bg-gray-700  flex flex-wrap justify-center content-between py-10">
+      <div className="container px-5 md:px-12 h-full w-11/12 md:w-3/4 bg-gray-700  flex flex-wrap justify-center content-between py-10">
         <div className="title w-full flex justify-center items-center ">
           <div className="space-y-2">
             <h1 className="font-bold text-5xl text-center w-full">
@@ -127,58 +134,24 @@ const Shell = () => {
             </div>
           </div>
           <div className="w-52 m-auto relative">
-            <Cup
-              isShuffle={isShuffle}
-              isPlay={isPlay}
-              isGame={isGame}
-              level={level}
-              easy={easy}
-              medium={medium}
-              hard={hard}
-              score={score}
-              highscore={highscore}
-              box={box1}
-              position={"left-0"}
-              setPlay={setPlay}
-              setGame={setGame}
-              setScore={setScore}
-              setHighscore={setHighscore}
-            />
-            <Cup
-              isShuffle={isShuffle}
-              isPlay={isPlay}
-              isGame={isGame}
-              level={level}
-              easy={easy}
-              medium={medium}
-              hard={hard}
-              score={score}
-              highscore={highscore}
-              jackpot={jackpot}
-              box={box2}
-              position={"left-20"}
-              setPlay={setPlay}
-              setGame={setGame}
-              setScore={setScore}
-              setHighscore={setHighscore}
-            />
-            <Cup
-              isShuffle={isShuffle}
-              isPlay={isPlay}
-              isGame={isGame}
-              level={level}
-              easy={easy}
-              medium={medium}
-              hard={hard}
-              score={score}
-              highscore={highscore}
-              box={box3}
-              position={"left-40"}
-              setPlay={setPlay}
-              setGame={setGame}
-              setScore={setScore}
-              setHighscore={setHighscore}
-            />
+            {cups.map((cup, index) => (
+              <Cup
+                //dynamic data
+                key={index}
+                box={cup.box}
+                position={cup.position}
+                jackpot={cup.jackpot}
+                //static data
+                isShuffle={isShuffle}
+                isPlay={isPlay}
+                level={level}
+                score={score}
+                highscore={highscore}
+                setPlay={setPlay}
+                setScore={setScore}
+                setHighscore={setHighscore}
+              />
+            ))}
           </div>
           <Button
             isPlay={isPlay}
@@ -188,10 +161,10 @@ const Shell = () => {
         </div>
         <div className="w-full flex justify-between items-center">
           <h2 className="text-xl md:text-5xl">
-            Score : <span className="font-bold">{score}</span>{" "}
+            Score : <span className="font-bold">{score}</span>
           </h2>
           <h2 className="text-xl md:text-5xl">
-            Highscore : <span className="font-bold">{highscore}</span>{" "}
+            Highscore : <span className="font-bold">{highscore}</span>
           </h2>
         </div>
       </div>
