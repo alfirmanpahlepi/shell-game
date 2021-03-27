@@ -45,11 +45,11 @@ const Shell = () => {
     for (var i = 0; i <= count; i++) {
       await timer(delay);
       random = Math.random();
-      if (random < 0.3) {
+      if (random <= 0.3) {
         setBox1("left");
         setBox2("mid");
         setBox3("right");
-      } else if (random < 0.6) {
+      } else if (random <= 0.6) {
         setBox1("mid");
         setBox2("right");
         setBox3("left");
