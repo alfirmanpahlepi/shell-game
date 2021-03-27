@@ -132,10 +132,11 @@ const Shell = () => {
         </div>
         <div className="space-y-36">
           <div className="flex justify-center items-center space-x-5">
-            <div
-              onClick={() => (!isPlay ? setLevel(easy) : null)}
-              className="space-x-1"
-            >
+            { /* help me pls :'( 
+                i cant build this Radio Button with dynamic component
+                if i build with component, and adding some array to props
+                the radio button will updating with twice click, whyyy ?*/}
+            <div className="space-x-1">
               <input
                 type="radio"
                 id="easy"
@@ -143,32 +144,29 @@ const Shell = () => {
                 value="easy"
                 defaultChecked={true}
                 disabled={isPlay ? true : false}
+                onChange={() => (!isPlay ? setLevel(easy) : null)}
               />
               <label htmlFor="easy">Easy</label>
             </div>
-            <div
-              onClick={() => (!isPlay ? setLevel(medium) : null)}
-              className="space-x-1"
-            >
+            <div className="space-x-1">
               <input
                 type="radio"
                 id="medium"
                 name="level"
                 value="medium"
                 disabled={isPlay ? true : false}
+                onChange={() => (!isPlay ? setLevel(medium) : null)}
               />
               <label htmlFor="medium">Medium</label>
             </div>
-            <div
-              onClick={() => (!isPlay ? setLevel(hard) : null)}
-              className="space-x-1"
-            >
+            <div className="space-x-1">
               <input
                 type="radio"
                 id="hard"
                 name="level"
                 value="hard"
                 disabled={isPlay ? true : false}
+                onChange={() => (!isPlay ? setLevel(hard) : null)}
               />
               <label htmlFor="hard">Hard</label>
             </div>
