@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+//component
 import { Button } from "../../components/Button";
 import { Cup } from "../../components/Cup";
 import { win, fail, bloop } from "../../Assets/Audio";
