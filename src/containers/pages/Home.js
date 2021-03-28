@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 //component
+import { Title } from "../../components/Title";
 import { Button } from "../../components/Button";
 import { Cup } from "../../components/Cup";
-import { win, fail, bloop } from "../../Assets/Audio";
+//assets
+import { pop, win, uh, bloop } from "../../Assets/Audio";
 
 export default function Home() {
   const easy = "duration-700";
@@ -61,7 +63,7 @@ export default function Home() {
   }
 
   function handleClick() {
-    bloop.play()
+    pop.play();
     setPlay(true);
     setShuffle(true);
     animate();
@@ -92,7 +94,7 @@ export default function Home() {
   function handleLose() {
     if (isPlay) {
       if (!isShuffle) {
-        fail.play();
+        uh.play();
         setPlay(false);
         setScore(0);
       }
@@ -107,6 +109,7 @@ export default function Home() {
 
   return (
     <>
+      <Title />
       <div className="space-y-36">
         <div className="flex justify-center items-center space-x-5">
           {/* help me pls :'( 
@@ -122,6 +125,7 @@ export default function Home() {
               value="easy"
               defaultChecked={true}
               disabled={isPlay ? true : false}
+              onClick={() => (!isPlay ? bloop.play() : null)}
               onChange={() => (!isPlay ? setLevel(easy) : null)}
             />
             <label className="lg:text-xl" htmlFor="easy">
@@ -130,12 +134,13 @@ export default function Home() {
           </div>
           <div className="space-x-2">
             <input
-              className="text-yellow-600 lg:h-6 lg:w-6 focus:ring-0"
+              className="text-yellow-500 lg:h-6 lg:w-6 focus:ring-0"
               type="radio"
               id="medium"
               name="level"
               value="medium"
               disabled={isPlay ? true : false}
+              onClick={() => (!isPlay ? bloop.play() : null)}
               onChange={() => (!isPlay ? setLevel(medium) : null)}
             />
             <label className="lg:text-xl" htmlFor="medium">
@@ -144,12 +149,13 @@ export default function Home() {
           </div>
           <div className="space-x-2">
             <input
-              className="text-red-600 lg:h-6 lg:w-6 focus:ring-0"
+              className="text-red-500 lg:h-6 lg:w-6 focus:ring-0"
               type="radio"
               id="hard"
               name="level"
               value="hard"
               disabled={isPlay ? true : false}
+              onClick={() => (!isPlay ? bloop.play() : null)}
               onChange={() => (!isPlay ? setLevel(hard) : null)}
             />
             <label className="lg:text-xl" htmlFor="hard">
