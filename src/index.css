@@ -30,3 +30,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.left {
+  left: 0;
+}
+.mid {
+  left: 5rem;
+}
+.right {
+  left: 10rem;
+}
