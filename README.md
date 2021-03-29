@@ -4,7 +4,9 @@
 
 Find the yellow ball !
 
-Demo : [https://ezza022.github.io/Shell-Game/](https://ezza022.github.io/Shell-Game/)
+Demo : 
+- [shell-game](https://ezza022.github.io/Shell-Game/)
+- [shell-game-v2](https://shell-game-4e62b.web.app/)
 
 ## Technologies used
 - Reactjs
