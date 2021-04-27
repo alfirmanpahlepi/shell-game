@@ -12,6 +12,3 @@ Demo :
 - Reactjs
 - TailwindCSS
 - Github Pages
-
-processing...
-i still updating this game for some features
