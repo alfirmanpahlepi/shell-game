@@ -8,14 +8,14 @@
       "type": "image/x-icon"
     },
     {
-      "src": "favicon.ico",
+      "src": "logo192.png",
       "type": "image/png",
-      "sizes": "32x32"
+      "sizes": "192x192"
     },
     {
-      "src": "favicon.ico",
+      "src": "logo512.png",
       "type": "image/png",
-      "sizes": "32x32"
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
