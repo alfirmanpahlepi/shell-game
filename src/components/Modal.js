@@ -1,14 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import useSaveData from "../hooks/useSaveData";
 
 export default function Modal({ score, setModal }) {
-  const push = useNavigate();
   const [name, setName] = useState("");
-
-  const publish = () => {
-    alert("published");
-    push("/history");
-  };
+  const { isLoading, saveData } = useSaveData(name, score);
 
   return (
     <div
@@ -34,8 +29,8 @@ export default function Modal({ score, setModal }) {
         </div>
         <button
           type="button"
-          disabled={!name}
-          onClick={publish}
+          disabled={!name || isLoading}
+          onClick={saveData}
           className="w-full py-3 bg-green-400 text-white"
         >
           Publish

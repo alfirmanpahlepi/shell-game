@@ -6,7 +6,6 @@ export const SearchInput = ({ search, handleSearch }) => {
       <SearchIcon className="h-4 w-4 absolute right-1 top-1" />
       <input
         autoComplete="off"
-        maxLength="10"
         value={search}
         onChange={(e) => handleSearch(e)}
         className="focus:outline-none ring-1 ring-green-200 text-sm mx-auto w-full rounded-md px-2"

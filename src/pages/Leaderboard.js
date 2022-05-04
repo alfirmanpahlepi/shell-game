@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
+import { getPlayers } from "../config/firebase";
 
 const Leaderboard = () => {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
+    getPlayers().then((res) => {
+      setPlayers(res);
+    });
     return () => {
       setPlayers([]);
     };
@@ -32,7 +36,7 @@ const Leaderboard = () => {
                 })
                 //display all player
                 .map((player, index) => (
-                  <tr className="flex">
+                  <tr key={index} className="flex">
                     <td className="w-20 sm:w-40">{index + 1}</td>
                     <td className="flex-grow">{player.data.name}</td>
                     <td className="w-20 sm:w-40">{player.data.score}</td>

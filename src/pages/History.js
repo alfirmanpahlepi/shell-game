@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import TimeAgo from "react-timeago";
 import { SearchInput } from "../components/SearchInput";
+import { getPlayers } from "../config/firebase";
+import { useCheat } from "../Routes";
 
 const History = () => {
+  const { setShowJackpot } = useCheat();
   const [players, setPlayers] = useState([]);
   const [filtered, setFilterd] = useState([]);
   const [search, setSearch] = useState("");
@@ -14,18 +17,10 @@ const History = () => {
 
   //fetch all data
   useEffect(() => {
-    // async function fecthData() {
-    //   try {
-    //     const res = await getDataFromAPI("players");
-    //     if (res) {
-    //       setPlayers(res);
-    //       setFilterd(res);
-    //     }
-    //   } catch (e) {
-    //     alert(e);
-    //   }
-    // }
-    // fecthData();
+    getPlayers().then((res) => {
+      setPlayers(res);
+      setFilterd(res);
+    });
     return () => {
       setPlayers([]);
     };
@@ -38,6 +33,15 @@ const History = () => {
     );
     setPlayers(results);
   }, [search, filtered]);
+
+  useEffect(() => {
+    if (search === "SHOWJACKPOT") {
+      alert("cheat activated!")
+      setShowJackpot(true);
+    }
+  }, [search, setShowJackpot]);
+
+  console.log(search);
 
   return (
     <div className="w-full h-full md:px-16 space-y-10">

@@ -26,7 +26,7 @@ export default function useShellGame() {
 
     const interval = setInterval(() => {
       // stop interval in 5 seconds
-      if (new Date().getTime() - start > 500) {
+      if (new Date().getTime() - start > 3000) {
         setStatus("choosing");
         clearInterval(interval);
         return;
@@ -59,7 +59,12 @@ export default function useShellGame() {
   const userChoice = (isJackpot) => {
     if (status === "ready" || status === "over") return;
     if (!isJackpot) return setStatus("over");
-    setScore(score + 100);
+    let newScore;
+    if (level === "easy") newScore = 10;
+    else if (level === "medium") newScore = 30;
+    else if (level === "hard") newScore = 50;
+    else if (level === "hawk eye") newScore = 100;
+    setScore(score + newScore);
     setStatus("ready");
   };
 
