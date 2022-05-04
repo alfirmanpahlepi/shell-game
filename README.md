@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+<h1 align="center">☕️ Shell Game 🎲</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### By [Alfirman Ejha Pahlepi](https://github.com/alfirmanpahlepi/) 👨‍💻 - Click [here](https://shell-game-4e62b.web.app/) to view project.
 
-## Available Scripts
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-In the project directory, you can run:
+## Description 📝
 
-### `yarn start`
+The shell game is often portrayed as a gambling game, but in reality, when a wager for money is made, it is almost always a confidence trick used to perpetrate fraud. In confidence trick slang, this swindle is referred to as a short-con because it is quick and easy to pull off.
+## Setup/Installation Instructions 📁
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites 🖥️
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Node](https://nodejs.org/en/)
+- A text editor like [VSCode](https://code.visualstudio.com/)
+- [Git bash](https://git-scm.com/)
 
-### `yarn test`
+1. Clone the repository: `% git clone https://github.com/alfirmanpahlepi/shell-game.git`
+2. Navigate to the `shell-game` directory on your computer
+3. Open your preferred text editor to view code
+4. To start a development server and view project in the browser:
+   - Run command `yarn install` to install dependencies
+   - Finally, run the command `yarn start` to start a development server
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-### `yarn build`
+## Bugs 🐞
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+No known Issues
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used 💾
 
-### `yarn eject`
+<div>
+<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" alt="React" height="45" style="vertical-align:top; margin:4px">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Gallery 📷
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Preview](https://firebasestorage.googleapis.com/v0/b/image-storage-aaa6b.appspot.com/o/shell%20game%2FWeb%20capture_5-5-2022_3239_shell-game-4e62b.web.app.jpeg?alt=media&token=fa0c78c2-74f7-4268-ad2c-7151fa4dcffe)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Preview](https://firebasestorage.googleapis.com/v0/b/image-storage-aaa6b.appspot.com/o/shell%20game%2Fshell-game-4e62b.web.app_.png?alt=media&token=639d53ab-09b3-41e8-befc-0a14d27026cb)
 
-## Learn More
+![Preview](https://firebasestorage.googleapis.com/v0/b/image-storage-aaa6b.appspot.com/o/shell%20game%2Fshell-game-4e62b.web.app_%20(2).png?alt=media&token=ff07f2d4-84c6-405e-9e29-135a71cb739d)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Preview](https://firebasestorage.googleapis.com/v0/b/image-storage-aaa6b.appspot.com/o/shell%20game%2Fshell-game-4e62b.web.app_%20(1).png?alt=media&token=a0a03f4d-ae26-4e10-bfc5-348c306bd148)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
