@@ -2,6 +2,7 @@
   "name": "shell-game",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alfirmanpahlepi.github.io/shell-game",
   "dependencies": {
     "@heroicons/react": "^1.0.6",
     "@testing-library/jest-dom": "^5.14.1",
@@ -19,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +44,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
+    "gh-pages": "^3.2.3",
     "postcss": "^8.4.13",
     "tailwindcss": "^3.0.24"
   }
