@@ -5,9 +5,9 @@ export default function useShellGame() {
   const [status, setStatus] = useState("ready");
   const [level, setLevel] = useState("easy");
   const [cups, setCups] = useState([
-    { name: "cup1", position: "-translate-x-20", isJackpot: true },
-    { name: "cup2", position: "translate-x-0", isJackpot: false },
-    { name: "cup3", position: "translate-x-20", isJackpot: false },
+    { name: "cup1", position: left, isJackpot: true },
+    { name: "cup2", position: mid, isJackpot: false },
+    { name: "cup3", position: right, isJackpot: false },
   ]);
 
   const shuffle = () => {
@@ -38,17 +38,17 @@ export default function useShellGame() {
       }
 
       if (random === 1) {
-        cups[0].position = "-translate-x-20";
-        cups[1].position = "translate-x-0";
-        cups[2].position = "translate-x-20";
+        cups[0].position = left;
+        cups[1].position = mid;
+        cups[2].position = right;
       } else if (random === 2) {
-        cups[0].position = "translate-x-0";
-        cups[1].position = "translate-x-20";
-        cups[2].position = "-translate-x-20";
+        cups[0].position = mid;
+        cups[1].position = right;
+        cups[2].position = left;
       } else if (random === 3) {
-        cups[0].position = "translate-x-20";
-        cups[1].position = "-translate-x-20";
-        cups[2].position = "translate-x-0";
+        cups[0].position = right;
+        cups[1].position = left;
+        cups[2].position = mid;
       }
 
       prev = random;
@@ -70,3 +70,7 @@ export default function useShellGame() {
 
   return { userChoice, shuffle, score, setLevel, status, cups };
 }
+
+const left = "-translate-x-20 sm:-translate-x-40";
+const mid = "translate-x-0";
+const right = "translate-x-20 sm:translate-x-40";

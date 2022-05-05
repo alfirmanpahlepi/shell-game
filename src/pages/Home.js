@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { useCheat } from "../Routes";
 import { Button } from "../components/Button";
+import Cup from "../components/Cup";
 import InputRadioLabel from "../components/InputRadioLabel";
 import Modal from "../components/Modal";
 import useShellGame from "../hooks/useShellGame";
 
 const Home = () => {
   const [modal, setModal] = useState(false);
-  const { showJackpot } = useCheat();
   const { score, shuffle, userChoice, setLevel, status, cups } = useShellGame();
 
   return (
@@ -44,18 +43,14 @@ const Home = () => {
             </InputRadioLabel>
           ))}
         </div>
-        <div className="w-52 m-auto relative flex justify-center">
+        <div className="relative flex justify-center items-center">
           {cups.map((cup, index) => (
-            <div
+            <Cup
               key={index}
-              onClick={() => userChoice(cup.isJackpot)}
-              className={`${cup.position} h-10 w-10 bottom-14 cursor-pointer flex absolute leading-10 bg-gray-100 text-gray-700 duration-200`}
-            >
-              {cup.isJackpot &&
-                (status === "ready" || status === "over" || showJackpot) && (
-                  <div className="m-auto bg-yellow-400 h-4 w-4 rounded-full"></div>
-                )}
-            </div>
+              cup={cup}
+              status={status}
+              userChoice={userChoice}
+            />
           ))}
         </div>
         <div className="w-full text-center">

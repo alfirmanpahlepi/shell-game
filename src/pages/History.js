@@ -48,10 +48,10 @@ const History = () => {
       <div>
         <h1 className="text-4xl font-bold text-center">History</h1>
       </div>
-      <div className="sm:w-4/5 mx-auto h-3/4 bg-white text-green-600 rounded-md overflow-y-auto py-3 space-y-3">
+      <div className="sm:w-4/5 mx-auto h-3/4 bg-white text-violet-600 rounded-md overflow-y-auto py-3 space-y-3">
         <SearchInput search={search} handleSearch={handleSearch} />
         <table className="mx-auto w-full leading-loose text-center">
-          <thead className="bg-green-100">
+          <thead className="bg-violet-100">
             <tr className="flex ">
               <th className="flex-1 ">Name</th>
               <th className="">Score</th>
@@ -70,7 +70,7 @@ const History = () => {
                     <td className="flex-1 ">{player.data.name}</td>
                     <td className="">{player.data.score}</td>
                     <td className="flex-1 ">
-                      <span className="bg-green-200 rounded-xl px-3 py-1">
+                      <span className="bg-violet-200 rounded-xl px-3 py-1">
                         <TimeAgo date={player.data.time} />
                       </span>
                     </td>

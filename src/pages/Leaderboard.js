@@ -18,9 +18,9 @@ const Leaderboard = () => {
       <div>
         <h1 className="text-4xl font-bold text-center">Leaderboard</h1>
       </div>
-      <div className="sm:w-4/5 mx-auto h-3/4 bg-white text-green-600 rounded-md overflow-y-auto">
+      <div className="sm:w-4/5 mx-auto h-3/4 bg-white text-violet-600 rounded-md overflow-y-auto">
         <table className="mx-auto w-full leading-loose text-center">
-          <thead className="bg-green-100">
+          <thead className="bg-violet-100">
             <tr className="flex">
               <th className="w-20 sm:w-40">Rank</th>
               <th className="flex-grow">Name</th>
